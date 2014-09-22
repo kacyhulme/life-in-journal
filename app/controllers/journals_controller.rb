@@ -1,4 +1,4 @@
-class AuthorsController < ApplicationController
+class JournalsController < ApplicationController
   def index
   end
 
@@ -21,7 +21,7 @@ class AuthorsController < ApplicationController
   end
 
   private
-  def author_params
-    params.require(:author).permit(:name)
+  def journal_params
+    params.require(:journal).permit(:journal_title)
   end
 end
