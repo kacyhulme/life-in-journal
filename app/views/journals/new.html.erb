@@ -1,3 +1,13 @@
-<h2>New Journal Title: _______ </h2> <%= link_to "Submit Your New Journal", journals_path %>
+<h2>New Journal </h2>
 
-<p><%= link_to "Add a New Entry to This Journal", new_journal_entry_path(:journal_id) %></p>
+<%= form_for (@journal) do |f| %>
+
+  <div class="form-group">
+    <%= f.label :journal_title %>
+    <%= f.text_field :journal_title, class: "form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Submit Your New Journal", class: "btn btn-primary btn-sm" %>
+  </div>
+<% end %>

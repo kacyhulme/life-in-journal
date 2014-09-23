@@ -3,6 +3,7 @@ Your Journals
 <% @journals.each do |journal|  %>
 <ul>
   <li><%=  journal.journal_title %></li>
+  <li><%=  link_to "View this journal", journal %>
 </ul>
 <% end %>
 
