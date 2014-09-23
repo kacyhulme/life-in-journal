@@ -1,8 +1,10 @@
 class JournalsController < ApplicationController
   def index
+    @journals = Journal.all
   end
 
   def show
+    @journal = Journal.find(params[:journal_id])
   end
 
   def new

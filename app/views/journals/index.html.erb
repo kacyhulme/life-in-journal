@@ -1,0 +1,9 @@
+Your Journals
+
+<% @journals.each do |journal|  %>
+<ul>
+  <li><%=  journal.journal_title %></li>
+</ul>
+<% end %>
+
+<p><%= link_to "Add a New Journal", new_journal_path %></p>

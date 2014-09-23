@@ -1,0 +1,9 @@
+Your Entries for Journal <%= @journal %>
+
+<% @entries.each do |entry|  %>
+<ul>
+  <li> entry.entry_title</li>
+  <li> entry.entry_date</li>
+  <li> entry.entry_description</li>
+</ul>
+<% end %>
