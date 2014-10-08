@@ -15,7 +15,7 @@ class EntriesController < ApplicationController
   end
 
   def create
-    @journal = Journal.find(params[:project_id])
+    @journal = Journal.find(params[:journal_id])
     @entry = @journal.entries.new(entry_params)
     if @entry.save
       redirect_to journal_entries_path(@entry),
