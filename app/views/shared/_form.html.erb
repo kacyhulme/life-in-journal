@@ -1,4 +1,4 @@
-<%= form_for [:journal, @entry] do |f| %>
+<%= form_for ([:journal, @entry]) do |f| %>
 
   <div class="form-group">
     <%= f.label :entry_date %>
@@ -8,11 +8,6 @@
   <div class="form-group">
     <%= f.label :entry_title %>
     <%= f.text_field :entry_title, class: "form-control" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :tag_list, "Tags (separated by commas)" %><br />
-    <%= f.text_field :tag_list %>
   </div>
 
   <div class="actions">
