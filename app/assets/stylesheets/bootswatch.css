@@ -3567,7 +3567,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .nav {
   margin-bottom: 0;
-  padding-left: 0;
+  padding-left: 20px;
   list-style: none;
 }
 .nav > li {
