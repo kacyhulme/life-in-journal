@@ -1,0 +1,48 @@
+<% if user_signed_in? %>
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <%= link_to "Life In Journal", root_path, class: "navbar-brand" %>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><%= link_to "All Journals", journals_path %></li>
+          <li class="active"><%= link_to "Account Info", users_path %></li>
+        </ul>
+
+        <div class="navbar-form navbar-left" role="search">
+          <%= form_tag(journals_path, method: "get") do %>
+            <div class="form-group">
+              <%= text_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %></div>
+            <%= submit_tag "Search", :name => nil, class: "btn btn-primary btn-sm" %>
+          <% end %>
+        </div>
+
+        <form class="navbar-form navbar-right" role="search">
+          Logged in as <%= link_to current_user.email, current_user %>!
+          <button class="btn btn-default btn-sm"><%= link_to "Account Settings", edit_user_path(current_user) %></button>
+          <button class="btn btn-default btn-sm"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+<% else %>
+
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <% unless current_page?(root_path) %>
+          <form class="navbar-form navbar-left">
+            <button class="btn btn-default btn-sm"><%= link_to "Search", root_path %></button>
+          </form>
+        <% end %>
+        <form class="navbar-form navbar-right">
+          <button class="btn btn-default btn-sm"><%= link_to "Sign Up", new_user_registration_path %></button>
+          <button class="btn btn-default btn-sm"><%= link_to "Sign In", new_user_session_path %></button>
+
+        </form>
+      </div>
+    </div>
+  </nav>
+<% end %>

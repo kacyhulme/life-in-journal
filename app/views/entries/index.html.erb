@@ -1,9 +1,3 @@
-Your Entries for Journal <%= @journal %>
-
-<% @entries.each do |entry|  %>
-<ul>
-  <li> entry.entry_title</li>
-  <li> entry.entry_date</li>
-  <li> entry.entry_description</li>
-</ul>
-<% end %>
+Your Entries for Journal <%= @journal.journal_title %>
+To see a list of all your entries:
+<%= link_to "All Entries for this Journal", journal_path(@journal) %>
