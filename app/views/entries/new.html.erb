@@ -2,7 +2,6 @@
 
 <%= form_for ([:journal, @entry]) do |f| %>
 
-
   <div class="form-group">
     <%= f.label :entry_title %>
     <%= f.text_field :entry_title, class: "form-control" %>
@@ -12,6 +11,12 @@
     <%= f.label :entry_date %>
     <%= f.date_field :entry_date, class: "form-control" %>
   </div>
+
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_area :description, class: "form-control description-height", maxlength: 1000 %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Add This Entry", class: "btn btn-primary btn-sm" %>
   </div>

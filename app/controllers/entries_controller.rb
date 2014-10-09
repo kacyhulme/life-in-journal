@@ -6,7 +6,6 @@ class EntriesController < ApplicationController
   end
 
   def show
-    @entry = Entry.find(params[:id])
   end
 
   def new
@@ -18,7 +17,7 @@ class EntriesController < ApplicationController
     @journal = Journal.find(params[:journal_id])
     @entry = @journal.entries.new(entry_params)
     if @entry.save
-      redirect_to journal_entries_path(@entry),
+      redirect_to journal_entries_path(@journal),
       notice: "Your entry was created"
     else
       render :new
@@ -26,7 +25,6 @@ class EntriesController < ApplicationController
   end
 
   def edit
-    @entry = Entry.find(params[:id])
   end
 
   def update
