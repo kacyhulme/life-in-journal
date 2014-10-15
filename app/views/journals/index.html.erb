@@ -4,6 +4,7 @@ Your Journals
 <ul>
   <li><%=  journal.journal_title %></li>
   <li><%=  link_to "View this journal", journal %>
+  <p><%= link_to "Edit this Journal", edit_journal_path(journal) %></p>
 </ul>
 <% end %>
 

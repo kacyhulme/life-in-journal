@@ -1,13 +1,3 @@
-<h2>New Journal </h2>
+<h1>New Journal</h1>
 
-<%= form_for (@journal) do |f| %>
-
-  <div class="form-group">
-    <%= f.label :journal_title %>
-    <%= f.text_field :journal_title, class: "form-control" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Submit Your New Journal", class: "btn btn-primary btn-sm" %>
-  </div>
-<% end %>
+<%= render 'form' %>

@@ -6,6 +6,13 @@ class EntriesController < ApplicationController
   end
 
   def show
+    @journal = Journal.find(params[:journal_id])
+    @entry = @journal.entries.find(params[:id])
+  end
+
+  def edit
+    @journal = Journal.find(params[:journal_id])
+    @entry = @journal.entries.find(params[:id])
   end
 
   def new
@@ -24,12 +31,14 @@ class EntriesController < ApplicationController
     end
   end
 
-  def edit
-  end
-
   def update
-    @entry = Entry.find(params[:id])
-    @entry.update(entry_params)
+    @journal = Journal.find(params[:journal_id])
+    @entry = @journal.entries.find(params[:id])
+    if @entry.update(entry_params)
+      redirect_to @journal, notice: "Your updates have been saved"
+    else
+      render :edit
+    end
   end
 
   def destroy

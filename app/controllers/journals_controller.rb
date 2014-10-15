@@ -5,6 +5,7 @@ class JournalsController < ApplicationController
 
   def show
     @journal = Journal.find(params[:id])
+    @entries = @journal.entries
   end
 
   def new
