@@ -49,6 +49,6 @@ class EntriesController < ApplicationController
 
   private
   def entry_params
-    params.require(:entry).permit(:entry_title, :entry_date)
+    params.require(:entry).permit(:entry_title, :entry_date, :tag_list)
   end
 end
