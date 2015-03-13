@@ -16,7 +16,7 @@ class JournalsController < ApplicationController
     @journal = Journal.new(journal_params)
     if @journal.save
       redirect_to @journal,
-      notice: "Your project was created"
+      notice: "Your journal was created"
     else
       render :new
     end

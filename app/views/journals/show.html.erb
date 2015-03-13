@@ -1,14 +1,1 @@
-Journal Title: <%= @journal.journal_title %>
-
-<% @journal.entries.each do |entry| %>
-  <ul>
-    ENTRY # ______
-    <li> Title: <%= entry.entry_title %></li>
-    <li> Date: <%= entry.entry_date %></li>
-    <li> Description: <%= entry.description %></li>
-    <li> Tags: <%= entry.tag_list %></li>
-    <p><%= link_to "Edit this entry", edit_journal_entry_path(entry.journal, entry) %></p>
-  </ul>
-<% end %>
-<p><%= link_to "Add New Entry", new_journal_entry_path(@journal) %></p>
 <p><%= link_to "View All Journals", journals_path %></p>

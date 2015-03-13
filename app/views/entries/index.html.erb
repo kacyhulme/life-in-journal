@@ -1,3 +1,18 @@
-Your Entries for Journal <%= @journal.journal_title %>
-To see a list of all your entries:
-<%= link_to "All Entries for this Journal", journal_path(@journal) %>
+<p><%= link_to "Back to All Journals", journals_path %></p>
+
+<h3>Entries for Journal: <%= @journal.journal_title %></h3>
+
+<% @journal.entries.each do |entry| %>
+<div class="row add-margin">
+  <div class="col-md-4">Title: <%= entry.entry_title %></div>
+  <div class="col-md-4">Entry 2</div>
+  <div class="col-md-4">Date: <%= entry.entry_date %></div>
+</div>
+<div>
+  <div class="col-md-4">Description: <%= entry.description %></div>
+  <div class="col-md-4">Tags: <%= entry.tag_list %></div>
+  <div class="col-md-4"><%= link_to "Edit this entry", edit_journal_entry_path(entry.journal, entry) %></div>
+</div>
+<% end %>
+<hr>
+<p><%= link_to "Add New Entry", new_journal_entry_path(@journal) %></p>
