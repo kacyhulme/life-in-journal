@@ -1,4 +1,5 @@
 class EntriesController < ApplicationController
+  before_action :authenticate_user!
 
   def index
     @journal = Journal.find(params[:journal_id])
