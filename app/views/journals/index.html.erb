@@ -1,8 +1,8 @@
-Journals
+<h3>Journals</h3>
 
 <p><%= link_to "Add a New Journal", new_journal_path %></p>
 
-<% @journals.each do |journal|  %>
+<% current_user.journals.each do |journal|  %>
 <div class="row add-margin">
   <div class="col-md-4"><%=journal.journal_title %></div>
   <div class="col-md-4">Author's Name</div>
